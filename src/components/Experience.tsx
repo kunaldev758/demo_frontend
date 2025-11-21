@@ -14,7 +14,7 @@ const experiences = [
       "Built customizable chatbot settings and AI-human handoff features",
       "Optimized performance and scalability through code profiling"
     ],
-    image:"https://media.licdn.com/dms/image/v2/C4D0BAQG5fRF_B9cKwg/company-logo_100_100/company-logo_100_100/0/1630546210966/activant_solutions_jaipur_logo?e=1762992000&v=beta&t=u5ZU7cF9ta7OfLq0xQesfIlstyHAgtgRYr160_U7nao"
+    image:"/activant-image.png"
   },
   {
     company: "Code Symphony LLP",
@@ -27,7 +27,7 @@ const experiences = [
       "Implemented role-based API management and subscription handling with RevenueCat",
       "Reviewed pull requests ensuring scalability and clean code practices"
     ],
-    image:"https://media.licdn.com/dms/image/v2/C4E0BAQFAjSQ8lQQQjA/company-logo_100_100/company-logo_100_100/0/1630642930882/code_symphony_llp_logo?e=1762992000&v=beta&t=VUm_FTPbWtj0iVgGQh3vlR-L2gy2mrZqWoPEQjpxxYA",
+    image:"/code-symphony-image.jpg",
   },
   {
     company: "KainSkep Solutions",
@@ -38,7 +38,7 @@ const experiences = [
       "Contributed to Eximpedia, an analytics tool for Asia's trade data",
       "Developed REST APIs using Node.js and ElasticSearch for data insights and visualization"
     ],
-    image:"https://media.licdn.com/dms/image/v2/C560BAQGiEg8TPm1COg/company-logo_100_100/company-logo_100_100/0/1649627644044/kainskep_solutions_logo?e=1762992000&v=beta&t=arm4YfQ-bBHRn-IZToPjrQN730njM09E5BqLOsIbfCU"
+    image:"/kain-skep-image.jpg"
   }
 ];
 

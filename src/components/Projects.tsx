@@ -13,7 +13,7 @@ const projects = [
       "Containerized with Docker for scalable deployment"
     ],
     demoUrl: "", // User will add
-    codeUrl: ""  // User will add
+    image: "/chataffy-image.png",
   },
   {
     title: "Folklog – Kids' Learning Platform",
@@ -24,8 +24,8 @@ const projects = [
       "Integrated New Relic and Bunny.net CDN for performance",
       "Added Google Analytics and RevenueCat for tracking and subscriptions"
     ],
-    demoUrl: "",
-    codeUrl: ""
+    demoUrl: "https://www.folklog.com/",
+    image: "/folklog -image.png",
   },
   {
     title: "Freshopure – B2B Ordering App",
@@ -36,8 +36,8 @@ const projects = [
       "Deployed on AWS with JWT-secured access",
       "Serverless MongoDB setup for scalability"
     ],
-    demoUrl: "",
-    codeUrl: ""
+    demoUrl: "https://freshopure.com/",
+    image: "/freshopure-image.png",
   }
 ];
 
@@ -60,13 +60,13 @@ const Projects = () => {
               key={index} 
               className="p-4 md:p-6 border-border bg-gradient-card backdrop-blur-sm hover:shadow-glow transition-all duration-300 flex flex-col"
             >
-              {/* Project Screenshot Placeholder */}
-              <div className="w-full h-40 md:h-48 bg-muted rounded-lg mb-4 md:mb-6 flex items-center justify-center border border-border">
-                <div className="text-center text-muted-foreground">
-                  <Code2 className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-2 opacity-50" />
-                  <p className="text-xs md:text-sm">Project Screenshot</p>
-                  <p className="text-xs">(Add your image here)</p>
-                </div>
+              {/* Project Screenshot */}
+              <div className="w-full h-40 md:h-48 rounded-lg mb-4 md:mb-6 overflow-hidden border border-border">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{project.title}</h3>
@@ -95,14 +95,27 @@ const Projects = () => {
               </div>
 
               <div className="flex gap-2 md:gap-3 mt-auto">
-                <Button size="sm" variant="outline" className="flex-1 text-xs md:text-sm" disabled={!project.demoUrl}>
-                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
-                  Demo
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="flex-1 text-xs md:text-sm"
+                  asChild
+                  disabled={!project.demoUrl}
+                >
+                  <a
+                    href={project.demoUrl || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    tabIndex={project.demoUrl ? 0 : -1}
+                  >
+                    <ExternalLink className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                    Demo
+                  </a>
                 </Button>
-                <Button size="sm" variant="outline" className="flex-1 text-xs md:text-sm" disabled={!project.codeUrl}>
+                {/* <Button size="sm" variant="outline" className="flex-1 text-xs md:text-sm" disabled={!project.codeUrl}>
                   <Code2 className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
                   Code
-                </Button>
+                </Button> */}
               </div>
             </Card>
           ))}

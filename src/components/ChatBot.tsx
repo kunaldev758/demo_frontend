@@ -22,40 +22,6 @@ const ChatBot = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // const handleSend = async () => {
-  //   if (!input.trim() || isLoading) return;
-
-  //   const userMessage = input.trim();
-  //   const newMessages = [...messages, { role: "user" as const, content: userMessage }];
-  //   setMessages(newMessages);
-  //   setInput("");
-  //   setIsLoading(true);
-
-  //   try {
-  //     const { data, error } = await supabase.functions.invoke('chat', {
-  //       body: { messages: newMessages }
-  //     });
-
-  //     if (error) throw error;
-
-  //     if (data?.response) {
-  //       setMessages(prev => [...prev, { role: "assistant", content: data.response }]);
-  //     } else {
-  //       throw new Error('No response from AI');
-  //     }
-  //   } catch (error) {
-  //     console.error('Chat error:', error);
-  //     toast({
-  //       title: "Error",
-  //       description: "Failed to get response. Please try again.",
-  //       variant: "destructive",
-  //     });
-  //     // Remove the user message if there was an error
-  //     setMessages(messages);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
 
 const handleSend = async () => {
   if (!input.trim() || isLoading) return;
@@ -68,7 +34,7 @@ const handleSend = async () => {
 
   try {
     // Call your Express backend instead of Supabase function
-    const response = await fetch("http://localhost:4000/ask", {
+    const response = await fetch(`${import.meta.env.BACKEND_URL}/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages,question:userMessage }),
