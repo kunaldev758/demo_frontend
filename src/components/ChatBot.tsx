@@ -34,7 +34,7 @@ const handleSend = async () => {
 
   try {
     // Call your Express backend instead of Supabase function
-    const response = await fetch(`${import.meta.env.BACKEND_URL}/ask`, {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages,question:userMessage }),

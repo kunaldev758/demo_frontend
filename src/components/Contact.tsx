@@ -33,7 +33,7 @@ const Contact = () => {
       const validatedData = contactSchema.parse(formData);
 
       // Send data to backend
-      const response = await fetch(`${import.meta.env.BACKEND_URL}/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
